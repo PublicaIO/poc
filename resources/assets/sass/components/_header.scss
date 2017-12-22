@@ -1,0 +1,157 @@
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: $main-simple-color;
+    border-bottom: 2px solid $border-color;
+    margin: 0 0 40px 0;
+    padding: 0 20px;
+
+    .logotype {
+        flex: 0 0 150px;
+    }
+
+    nav {
+        flex: 1 1 auto;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                flex: 0 0 200px;
+                text-align: center;
+
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    &.button {
+                        text-transform: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .user-profile {
+        position: relative;
+
+        &:hover {
+            .user-menu {
+                display: block;
+            }
+        }
+
+        .user-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            width: 50%;
+            right: 0;
+            border: 2px solid $border-color;
+            border-radius: 3px;
+            z-index: 3;
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    background: $main-simple-color;
+                    border-bottom: 1px solid $border-color;
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+
+                    a {
+                        color: $primary-color;
+                        display: block;
+                        text-align: center;
+                        padding: 5px 0;
+                    }
+                }
+            }
+        }
+
+        &.logged-in {
+            flex: 0 1 250px;
+        }
+
+        &.logged-out {
+            flex: 0 1 150px;
+        }
+
+        .user-logged {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .user-info {
+                flex: 1 1 auto;
+                font-size: $primary-font-size;
+                text-align: right;
+                padding: 0 10px 0 0;
+
+                .user-name {
+                    flex: 1 1 auto;
+                    color: $helper-color-2;
+                    font-weight: bold;
+                }
+
+                .user-role {
+                    flex: 1 1 auto;
+                }
+            }
+
+            .user-pic {
+                flex: 0 0 35px;
+                width: 35px;
+                height: 35px;
+                border-radius: 70px;
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .user-nav {
+                flex: 0 0 12px;
+                padding: 0 0 0 10px;
+
+                img {
+                    max-width: 12px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .user-register {
+            ul {
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    flex: 1 1 auto;
+                    list-style: none;
+                }
+            }
+        }
+    }
+
+    .user-wallet {
+        margin-left: 20px;
+    }
+}

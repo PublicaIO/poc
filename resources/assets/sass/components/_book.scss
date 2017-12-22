@@ -1,0 +1,186 @@
+.book-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 20px 0;
+
+    .book-title {
+        flex: 1 1 auto;
+        font-size: $heading-font-size;
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .book-promotion {
+        font-size: $subheading-font-size;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .book-sale-date {
+        text-align: center;
+        margin: 20px 0 0 0;
+
+        .sign-up {
+            width: 100%;
+        }
+
+        .book-sale-dates-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .date-block {
+                width: 100px;
+                height: 100px;
+                margin: 0 10px;
+                font-size: 35px;
+                border: 1px solid $border-color;
+                border-radius: 5px;
+                
+                p {
+                    font-size: $subheading-font-size;
+                    margin: 0;
+                }
+            }
+        }
+
+        .book-sale-start-date {
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        button {
+            text-transform: uppercase;
+        }
+    }
+
+    .book-contrib-discount {
+        margin: 40px 0;
+    }
+}
+
+.book-body {
+    .book-section-header {
+        text-align: center;
+
+        h2 {
+            display: inline-block;
+            position: relative;
+            font-weight: 300;
+            margin: 0 0 10px 0;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 25%;
+                width: 50%;
+                height: 3px;
+                background: $border-color;
+            }
+        }
+    }
+
+    .book-section-body {
+        margin: 20px 0 40px 0;
+    }
+
+    .book-about {
+        display: flex;
+        flex-direction: row;
+
+        .book-cover {
+            flex: 0 1 20%;
+            text-align: center;
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+
+            button {
+                text-transform: uppercase;
+                margin: 10px 0 0 0;
+            }
+        }
+
+        .book-about-body {
+            flex: 1 1 80%;
+            padding: 0 0 0 20px;
+        }
+    }
+
+    .about-author {
+        .book-section-body {
+            font-style: italic;
+        }
+
+        .about-author-info {
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .about-author-info-pic {
+                flex: 0 0 40%;
+                text-align: center;
+                padding: 0 10px 0 0;
+
+                img {
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100px;
+                    margin: 0 auto 10px auto;
+                }
+            }
+
+
+            .about-author-info-body {
+                flex: 1 1 auto;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+
+    .book-crowdfunding {
+        .book-section-body {
+            text-align: center;
+        }
+    }
+}
+
+.buy-body {
+    h3 {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+
+.sign-up {
+    width: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .form-field {
+        flex: 0 0 75%;
+    }
+
+    button {
+        flex: 0 1 20%;
+    }
+}
