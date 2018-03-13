@@ -188,44 +188,47 @@
                 </section>
 
                 <section id="newsection">
-                    <h2>Revenue Sharing</h2>
-                    <h3>Add people with whom you want to share the revenue from sales here</h3>
+                    <div class="new-section">
+                        <h3>Revenue Sharing</h3>
+                        <p>Add people with whom you want to share the revenue from sales here</p>
 
-                    <div class="tb-wrap">
-                        <table>
-                            <tr>
-                                <td>Beneficiary</td>
-                                <td>Etherium Address</td>
-                                <td>Revenue share</td>
-                                <td>Maximum revenue</td>
-                            </tr>
+                        <div class="tb-wrap">
+                            <table v-if="rev > 0">
+                                <tr>
+                                    <td>Beneficiary</td>
+                                    <td>Etherium Address</td>
+                                    <td>Revenue share</td>
+                                    <td>Maximum revenue</td>
+                                </tr>
 
-                            <tr v-for="i in rev">
-                                <td>
-                                    <div class="input-field">
-                                        <input type="text">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-field">
-                                        <input type="text">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-field">
-                                        <input type="text"> %
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-field">
-                                        <input type="text"> PBL
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        <button class="button button-active-action" @click.prevent="rev++">
-                            Add
-                        </button>
+                                <tr v-for="i in rev">
+                                    <td>
+                                        <div class="input-field">
+                                            <input type="text">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field">
+                                            <input type="text">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field">
+                                            <input type="text"> %
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field">
+                                            <input type="text"> PBL
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <button class="button button-active-action" @click.prevent="rev++">
+                                Add
+                            </button>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -249,15 +252,22 @@
 </template>
 
 <style>
+    .new-section {
+        border: 1px solid #b6bedb;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .new-section h3 {
+        margin: 10px 0;
+    }
 
     #newsection button {
         margin: 5px 0 5px 5px;
     }
 
     #newsection .tb-wrap {
-        border: 1px solid #b6bedb;
-        border-radius: 10px;
-        margin: 10px 0;
+        margin: 10px 0 0 0;
     }
 
     #newsection table {
@@ -296,7 +306,7 @@ export default {
 
     data() {
         return {
-            rev: 1,
+            rev: 0,
             book: {
                 title: null,
                 url: null,
