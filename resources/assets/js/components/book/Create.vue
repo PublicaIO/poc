@@ -181,30 +181,103 @@
                                 {{ errors.aftersale_keys_amount[0] }}
                             </pbl-form-error>
                         </div>
-
-                        <div class="form-group">
-                            <button class="button button-active-action" @click.prevent="saveBook">
-                                Save
-                            </button>
-
-                            <button v-if="book.status == status.PENDING" class="button button-success" @click.prevent="makePublic">
-                                Make Public
-                            </button>
-
-                            <button v-if="book.status == status.ACTIVE" class="button button-success" @click.prevent="startCrowdSale">
-                                Start Crowdsale
-                            </button>
-                        </div>
                     </div>
 
                     <pbl-kyc @success="kycPassed"></pbl-kyc>
 
+                </section>
+
+                <section id="newsection">
+                    <h2>Revenue Sharing</h2>
+                    <h3>Add people with whom you want to share the revenue from sales here</h3>
+
+                    <div class="tb-wrap">
+                        <table>
+                            <tr>
+                                <td>Beneficiary</td>
+                                <td>Etherium Address</td>
+                                <td>Revenue share</td>
+                                <td>Maximum revenue</td>
+                            </tr>
+
+                            <tr v-for="i in rev">
+                                <td>
+                                    <div class="input-field">
+                                        <input type="text">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field">
+                                        <input type="text">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field">
+                                        <input type="text"> %
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field">
+                                        <input type="text"> PBL
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="button button-active-action" @click.prevent="rev++">
+                            Add
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="button button-active-action" @click.prevent="saveBook">
+                            Save
+                        </button>
+
+                        <button v-if="book.status == status.PENDING" class="button button-success" @click.prevent="makePublic">
+                            Make Public
+                        </button>
+
+                        <button v-if="book.status == status.ACTIVE" class="button button-success" @click.prevent="startCrowdSale">
+                            Start Crowdsale
+                        </button>
+                    </div>
                 </section>
             </form>
         </main>
 
     </div>
 </template>
+
+<style>
+
+    #newsection button {
+        margin: 5px 0 5px 5px;
+    }
+
+    #newsection .tb-wrap {
+        border: 1px solid #b6bedb;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    #newsection table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    #newsection table tr td {
+        padding: 5px;
+    }
+
+    #newsection table tr td .input-field input {
+        border: 1px dashed #b6bedb;
+        border-radius: 5px;
+        padding: 3px 10px;
+        background: #fff;
+        font-family: 'Lato', sans-serif;
+        color: #0057B1;
+    }
+</style>
+
 
 <script>
 import { ReadManager } from 'root/utils/managers';
@@ -223,6 +296,7 @@ export default {
 
     data() {
         return {
+            rev: 1,
             book: {
                 title: null,
                 url: null,
