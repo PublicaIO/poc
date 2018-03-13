@@ -201,8 +201,8 @@
                                     <td>Maximum revenue</td>
                                 </tr>
 
-                                <tr v-for="i in rev">
-                                    <td>
+                                <tr v-for="i in rev" :key="i">
+                                    <td :data-id="i">
                                         <div class="input-field">
                                             <input type="text">
                                         </div>
